@@ -18,36 +18,36 @@
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages
- * GitHub Plugin URI: 
- * GitHub Branch:     
+ * GitHub Plugin URI:
+ * GitHub Branch:
  */
 
 // If this file is called directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {
-    die;
-} 
+	die;
+}
 
-// adds inline-svg shortcode and then 
+// adds inline-svg shortcode and then
 //outputs the file located in the child theme image folder
 
-function jdd_svg_inline_shortcode( $atts ){
-	if(empty($atts['class'])) {
+function jdd_svg_inline_shortcode( $atts ) {
+	if ( empty( $atts['class'] ) ) {
 		$atts['class'] = 'class="inline-svg"';
 	} else {
 		$atts['class'] = 'class="inline-svg ' . $atts['class'] . '"';
 	}
-    return jdd_svg_output($atts['file'], $atts['class']);
+	return jdd_svg_output( $atts['file'], $atts['class'] );
 }
 add_shortcode( 'insert-svg-code', 'jdd_svg_inline_shortcode', 15 );
 
 
-function jdd_svg_output($name, $classes) {
+function jdd_svg_output( $name, $classes ) {
 
-  $path = get_stylesheet_directory();
-  $file = $path . '/images/' . $name . '.svg';
+	$path = get_stylesheet_directory();
+	$file = $path . '/images/' . $name . '.svg';
 
-  return '<div ' . $classes . '>' .  file_get_contents( $file ) .  '</div>';
- 
+	return '<div ' . $classes . '>' .  file_get_contents( $file ) .  '</div>';
+
 }
 
 ?>
