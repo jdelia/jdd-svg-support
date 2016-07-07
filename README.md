@@ -11,6 +11,11 @@ To begin using this plugin, choose one of the following options to get started:
 * Clone the repo: `git clone https://github.com/jdelia/jdd-svg-support.git`
 * Fork the repo
 
+## Why I wrote this plugin
+
+For details on why I wrote this plugin, read my post: 
+[Using SVG Animation in WordPress](https://jackiedelia.com/using-svg-animation-wordpress/)
+
 ## How to Use
 
 Upload your SVG file(s) to your child theme `images` folder. If you don't have an images folder, just create one and copy the files into the folder. The shortcode has 3 attributes; the filename, the class (optional) and the path to the folder (optional). 
@@ -45,10 +50,6 @@ function update_svg_defaults( $merge_attributes, $defaults, $attributes, $shortc
    return $merge_attributes;
 }
 ```
-## Why I wrote this plugin
-
-For details on why I wrote this plugin, read my post: 
-[Using SVG Animation in WordPress](https://jackiedelia.com/using-svg-animation-wordpress/)
 
 ## Bugs and Issues
 
