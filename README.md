@@ -49,7 +49,7 @@ function update_svg_defaults( $merge_attributes, $defaults, $attributes, $shortc
 
 ## Bugs and Issues
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/jdelia/jdd-svg-support) here on GitHub.
+Have a bug or an issue with this plugin? [Open a new issue](https://github.com/jdelia/jdd-svg-support) here on GitHub.
 
 ## Creator
 
