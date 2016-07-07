@@ -34,7 +34,8 @@ You can use the `shortcode_atts_{$shortcode}` filter to programmatically change 
 
 Example: 
 
-```add_filter( 'shortcode_atts_insert-svg-code', 'update_svg_defaults', 10, 4);
+```
+add_filter( 'shortcode_atts_insert-svg-code', 'update_svg_defaults', 10, 4);
 function update_svg_defaults( $merge_attributes, $defaults, $attributes, $shortcode ) {
    
    $attributes['path'] = '  << insert your absolute path to folder with trailing slash >>  ';
