@@ -45,7 +45,10 @@ function update_svg_defaults( $merge_attributes, $defaults, $attributes, $shortc
    return $merge_attributes;
 }
 ```
- 
+## Why I wrote this plugin
+
+For details on why I wrote this plugin, read my post: 
+[Using SVG Animation in WordPress](https://jackiedelia.com/using-svg-animation-wordpress/)
 
 ## Bugs and Issues
 
