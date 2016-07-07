@@ -56,7 +56,7 @@ function svg_shortcode_html_output( $name, $classes, $path ) {
 	$filename = $path . $name . '.svg';
 	ob_start();
 	if ( file_exists( $filename ) ) {
-		echo '<span ' . $classes . '>' .  file_get_contents( $filename ) .  '</span>';
+		echo '<div ' . $classes . '>' .  file_get_contents( $filename ) .  '</div>';
 	} else {
 		echo 'SVG file not found: ' . $filename;
 	}

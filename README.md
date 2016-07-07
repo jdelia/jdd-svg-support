@@ -23,7 +23,7 @@ Format:
 
 The only required attribute is the filename. 
 
-If you do not specify a class="" attribute, a default class of inline-svg is added to a `<div>` tag. You can add more than one class if desired.
+If you do not specify a class="" attribute, a default class of `inline-svg` is added to a `<div>` tag. You can add more than one class if desired.
 
 If you do not specify a path, the default is used which is the images folder in the child theme root. 
 
@@ -41,7 +41,7 @@ function update_svg_defaults( $merge_attributes, $defaults, $attributes, $shortc
    $attributes['path'] = '  << insert your absolute path to folder with trailing slash >>  ';
 
    $merge_attributes = array_merge( $defaults, $attributes );
-   d($merge_attributes);
+ 
    return $merge_attributes;
 }
 ```
