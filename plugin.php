@@ -1,4 +1,5 @@
 <?php
+namespace JDD_SVG_Support;
 /**
  * JDD SVG Support
 
@@ -25,33 +26,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-/*
-adds inline-svg shortcode and then
-outputs the file located in the child theme image folder
-*/
 
+// adds inline-svg shortcode and then
+// outputs the file located in the child theme image folder
 
-function jdd_svg_inline_shortcode( $atts ) {
+function svg_inline_shortcode( $atts ) {
 
 	$defaults = array(
 		'file' => '',
 		'class' => 'class="inline-svg"',
 		'path' => get_stylesheet_directory() . '/images/',
 	);
-
+  	
+  	// if class provided - get it formatted for html output 
 	if ( ! empty( $atts['class'] ) ) {
-		$atts['class'] = rtrim( $defaults['class'], '"' ) . ' ' . $atts['class'] . '"';
+		$atts['class'] = 'class = "' . $atts['class'] . '"';
 	}
 
 	$merge_attributes = shortcode_atts( $defaults, $atts, 'insert-svg-code' );
 
-	return jdd_svg_output( $merge_attributes['file'], $merge_attributes['class'], $merge_attributes['path'] );
+	return svg_shortcode_html_output( $merge_attributes['file'], $merge_attributes['class'], $merge_attributes['path'] );
 
 }
-add_shortcode( 'insert-svg-code', 'jdd_svg_inline_shortcode', 10, 3 );
+add_shortcode( 'insert-svg-code', __NAMESPACE__ .'\\svg_inline_shortcode', 10, 3 );
 
 
-function jdd_svg_output( $name, $classes, $path ) {
+function svg_shortcode_html_output( $name, $classes, $path ) {
 
 	$filename = $path . $name . '.svg';
 	ob_start();
