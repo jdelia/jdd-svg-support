@@ -10,7 +10,7 @@ namespace JDD_SVG_Support;
  * @copyright         2016 Jackie D'Elia
  *
  * Plugin Name:       JDD SVG Support
- * Plugin URI:        https://jackiedelia.com
+ * Plugin URI:        https://github.com/jdelia/jdd-svg-support
  * Description:       Adds ability to embed SVG into pages.
  * Version:           0.90
  * Author:            Jackie D'Elia
@@ -18,7 +18,7 @@ namespace JDD_SVG_Support;
  * Text Domain:       jdd-svg-support
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * GitHub Plugin URI:
+ * GitHub Plugin URI: https://github.com/jdelia/jdd-svg-support
  */
 
 // If this file is called directly, abort.

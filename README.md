@@ -1,6 +1,6 @@
 # [JDD SVG Support Plugin](https://jackiedelia.com/) 
 
-[JDD SVG Support Plugin](https://github.com/jdelia/jdd-svg-support) is a simple plugin that embeds SVG code into your WordPress content via a shortcode. 
+[JDD SVG Support Plugin](https://github.com/jdelia/jdd-svg-support) is a simple plugin that embeds SVG code into your WordPress content via a shortcode so that you can style and/or animate with CSS. 
 
 ##BETA VERSION
 
