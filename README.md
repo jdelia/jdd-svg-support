@@ -36,7 +36,7 @@ You can use the `shortcode_atts_{$shortcode}` filter to programmatically change 
 
 Example: 
 
-```add_filter( 'shortcode_atts_insert-svg-code', 'update_svg_defaults', 10, 4);
+`add_filter( 'shortcode_atts_insert-svg-code', 'update_svg_defaults', 10, 4);
 function update_svg_defaults( $merge_attributes, $defaults, $attributes, $shortcode ) {
    
    $attributes['path'] = '  << insert your absolute path to folder with trailing slash >>  ';
@@ -44,7 +44,7 @@ function update_svg_defaults( $merge_attributes, $defaults, $attributes, $shortc
    $merge_attributes = array_merge( $defaults, $attributes );
    d($merge_attributes);
    return $merge_attributes;
-}```
+}`
  
 
 ## Bugs and Issues
@@ -60,5 +60,5 @@ This plugin was created by [Jackie D'Elia](https://jackiedelia.com).
 
 ## Copyright and License
 
-Copyright 2016 Jackie D'Elia. Code released under the [GPLv2](https://github.com/jdelia/jdd-svg-support/blob/master/LICENSE)license.
+Copyright 2016 Jackie D'Elia. Code released under the [GPLv2](https://github.com/jdelia/jdd-svg-support/blob/master/LICENSE) license.
 
