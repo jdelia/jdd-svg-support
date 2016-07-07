@@ -17,9 +17,7 @@
  * Text Domain:       jdd-svg-support
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Domain Path:       /languages
  * GitHub Plugin URI:
- * GitHub Branch:
  */
 
 // If this file is called directly, abort.
@@ -27,27 +25,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-// adds inline-svg shortcode and then
-//outputs the file located in the child theme image folder
+/*
+adds inline-svg shortcode and then
+outputs the file located in the child theme image folder
+*/
+
 
 function jdd_svg_inline_shortcode( $atts ) {
-	if ( empty( $atts['class'] ) ) {
-		$atts['class'] = 'class="inline-svg"';
-	} else {
-		$atts['class'] = 'class="inline-svg ' . $atts['class'] . '"';
+
+	$defaults = array(
+		'file' => '',
+		'class' => 'class="inline-svg"',
+		'path' => get_stylesheet_directory() . '/images/',
+	);
+
+	if ( ! empty( $atts['class'] ) ) {
+		$atts['class'] = rtrim( $defaults['class'], '"' ) . ' ' . $atts['class'] . '"';
 	}
-	return jdd_svg_output( $atts['file'], $atts['class'] );
-}
-add_shortcode( 'insert-svg-code', 'jdd_svg_inline_shortcode', 15 );
 
+	$merge_attributes = shortcode_atts( $defaults, $atts, 'insert-svg-code' );
 
-function jdd_svg_output( $name, $classes ) {
-
-	$path = get_stylesheet_directory();
-	$file = $path . '/images/' . $name . '.svg';
-
-	return '<div ' . $classes . '>' .  file_get_contents( $file ) .  '</div>';
+	return jdd_svg_output( $merge_attributes['file'], $merge_attributes['class'], $merge_attributes['path'] );
 
 }
+add_shortcode( 'insert-svg-code', 'jdd_svg_inline_shortcode', 10, 3 );
+
+
+function jdd_svg_output( $name, $classes, $path ) {
+
+	$filename = $path . $name . '.svg';
+	ob_start();
+	if ( file_exists( $filename ) ) {
+		echo '<span ' . $classes . '>' .  file_get_contents( $filename ) .  '</span>';
+	} else {
+		echo 'SVG file not found: ' . $filename;
+	}
+	return ob_get_clean();
+}
+
 
 ?>
